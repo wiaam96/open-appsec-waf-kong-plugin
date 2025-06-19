@@ -30,7 +30,6 @@ build = {
     mkdir -p attachments/attachment &&
     cp -r tmp_attachment/attachments/nano_attachment attachments/attachment/ &&
     cp -r tmp_attachment/core attachments/attachment/ &&
-    rm -rf tmp_attachment
   ]],
 
   modules = {
@@ -41,17 +40,17 @@ build = {
     ["lua_attachment_wrapper"] = {
       sources = {
         "lua_attachment_wrapper.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment_io.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment_metric.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment_sender.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment_sender_thread.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment_thread.c",
-        "attachments/attachment/attachments/nano_attachment/nano_compression.c",
-        "attachments/attachment/attachments/nano_attachment/nano_configuration.c",
-        "attachments/attachment/attachments/nano_attachment/nano_initializer.c",
-        "attachments/attachment/attachments/nano_attachment/nano_utils.c",
-        "attachments/attachment/attachments/nano_attachment/nano_attachment_util/nano_attachment_util.cc",
+        "attachments/attachment/nano_attachment/nano_attachment.c",
+        "attachments/attachment/nano_attachment/nano_attachment_io.c",
+        "attachments/attachment/nano_attachment/nano_attachment_metric.c",
+        "attachments/attachment/nano_attachment/nano_attachment_sender.c",
+        "attachments/attachment/nano_attachment/nano_attachment_sender_thread.c",
+        "attachments/attachment/nano_attachment/nano_attachment_thread.c",
+        "attachments/attachment/nano_attachment/nano_compression.c",
+        "attachments/attachment/nano_attachment/nano_configuration.c",
+        "attachments/attachment/nano_attachment/nano_initializer.c",
+        "attachments/attachment/nano_attachment/nano_utils.c",
+        "attachments/attachment/nano_attachment/nano_attachment_util/nano_attachment_util.cc",
         "attachments/attachment/core/attachments/http_configuration/http_configuration.cc",
         "attachments/attachment/core/compression/compression_utils.cc",
         "attachments/attachment/core/shmem_ipc_2/shared_ring_queue.c",
@@ -59,7 +58,8 @@ build = {
       },
       incdirs = {
         "attachments/attachment/core/include/attachments/",
-        "attachments/attachment/attachments/nano_attachment/"
+        "attachments/attachment/nano_attachment/",
+        "attachments/attachment/core/include/attachments"
       },
       defines = { "_GNU_SOURCE", "ZLIB_CONST" },
       libraries = { "pthread", "z", "rt", "stdc++" },
