@@ -28,7 +28,7 @@ build = {
     git clone --depth 1 https://github.com/openappsec/attachment tmp_attachment &&
     echo "Copying required directories..." &&
     mkdir -p attachments/attachment &&
-    cp -r tmp_attachment/attachments/nano_attachment attachments/attachment/ &&
+    cp -r tmp_attachment/attachments attachments/attachment/ &&
     cp -r tmp_attachment/core attachments/attachment/ &&
   ]],
 
